@@ -36,9 +36,9 @@ function translations_api( $type, $args = null ) {
 
 	if ( false === $res ) {
 		$url = $http_url = 'http://api.wordpress.org/translations/' . $type . '/1.0/';
-		if ( $ssl = wp_http_supports( array( 'ssl' ) ) ) {
-			$url = set_url_scheme( $url, 'https' );
-		}
+		// if ( $ssl = wp_http_supports( array( 'ssl' ) ) ) {
+		// 	$url = set_url_scheme( $url, 'https' );
+		// }
 
 		$options = array(
 			'timeout' => 3,
