@@ -23,10 +23,10 @@
 define('DB_NAME', 'gonano');
 
 /** MySQL database username */
-define('DB_USER', 'nanobox');
+define('DB_USER', $_ENV['DATA_DB_USER']);
 
 /** MySQL database password */
-define('DB_PASSWORD', $_ENV['DATA_DB_NANOBOX_PASS']);
+define('DB_PASSWORD', $_ENV['DATA_DB_PASS']);
 
 /** MySQL hostname */
 define('DB_HOST', $_ENV['DATA_DB_HOST']);

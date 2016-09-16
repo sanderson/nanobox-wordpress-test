@@ -1,18 +1,19 @@
 code.build:
   engine: php
   config:
-    runtime: php-5.6
+    runtime: php-7.0
     extensions:
       - gd
-      - mysql
+      - mysqli
       - curl
+      - zlib
     apache_modules:
       - deflate
 
 web.wp:
   start:
-    - /data/sbin/php-fpm -y /data/etc/php/php-fpm.conf -c /data/etc/php/php.ini
-    - /data/sbin/httpd -DNO_DETACH
+    fpm: /data/sbin/php-fpm -y /data/etc/php/php-fpm.conf -c /data/etc/php/php.ini
+    apache: /data/sbin/httpd -DNO_DETACH
   log_watch:
     apache[access]: /data/var/log/apache/access.log
     apache[error]: /data/var/log/apache/error.log
